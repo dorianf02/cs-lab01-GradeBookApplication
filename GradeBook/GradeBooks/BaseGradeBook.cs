@@ -82,11 +82,14 @@ namespace GradeBook.GradeBooks
                 return null;
             }
 
+            
+
             using (var file = new FileStream(name + ".gdbk", FileMode.Open, FileAccess.Read))
             {
                 using (var reader = new StreamReader(file))
                 {
                     var json = reader.ReadToEnd();
+                    
                     return ConvertToGradeBook(json);
                 }
             }
